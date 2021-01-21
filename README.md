@@ -34,7 +34,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=/tmp/test -DCMAKE_BUILD_TYPE=Release ..
 make install -j 8
 ```
 
-Download the test data files (see instructions [here](https://github.com/uzh-rpg/vilib).
+Download the test data files (see instructions [here](https://github.com/uzh-rpg/vilib)).
 Then run the tests:
 ```bash
 ./vilib_tests
