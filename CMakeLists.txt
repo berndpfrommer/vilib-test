@@ -2,15 +2,16 @@ cmake_minimum_required(VERSION 3.10)
 
 include(CheckLanguage)
 check_language(CUDA)
-if (DEFINED CMAKE_CUDA_COMPILER)
+if (CMAKE_CUDA_COMPILER)
    project(vilib-test LANGUAGES CXX CUDA)
 else()
    project(vilib-test LANGUAGES CXX)
 endif()
 
 find_package(vilib REQUIRED)
-find_package(OpenCV COMPONENTS core imgproc features2d highgui)
 find_package(CUDA REQUIRED)
+# only necessary if you happen to use opencv
+find_package(OpenCV COMPONENTS core imgproc features2d highgui)
 
 message(STATUS "Found CUDA ${CUDA_VERSION_STRING} at ${CUDA_TOOLKIT_ROOT_DIR}")
 

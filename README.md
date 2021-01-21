@@ -12,13 +12,13 @@ Clone the repos into a source directory:
 mkdir workspace
 mkdir /tmp/test
 cd workspace
-git clone https:://github.com/uzh-rpg/vilib
-git clone https:://github.com/berndpfrommer/vilib-test
+git clone https://github.com/uzh-rpg/vilib
+git clone https://github.com/berndpfrommer/vilib-test
 ```
 
 Build the visual lib:
 ```bash
-cd vilib/visual_lib
+cd vilib
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/tmp/test -DCMAKE_BUILD_TYPE=Release ..
