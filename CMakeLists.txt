@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
-if (${CMAKE_VERSION} VERSION_LESS 3.15)
-   project(vilib-test LANGUAGES CXX)
-else()
+include(CheckLanguage)
+check_language(CUDA)
+if (DEFINED CMAKE_CUDA_COMPILER)
    project(vilib-test LANGUAGES CXX CUDA)
+else()
+   project(vilib-test LANGUAGES CXX)
 endif()
 
 find_package(vilib REQUIRED)
@@ -25,6 +27,7 @@ target_link_libraries(vilib_tests
   opencv_core opencv_imgproc opencv_features2d opencv_highgui
   ${CUDA_LIBRARIES})
 
-install(TARGETS vilib_tests)
+install(TARGETS vilib_tests
+  DESTINATION lib)
 
 
